@@ -1,6 +1,6 @@
 FROM node:alpine as builder
 
-WORKDIR /app
+WORKDIR /usr/react-app
 
 COPY package.json .
 
@@ -17,4 +17,4 @@ FROM nginx
 
 EXPOSE 80
 
-COPY --from=builder /app/build /usr/share/nginx/html
+COPY --from=builder /usr/react-app/build /usr/share/nginx/html
